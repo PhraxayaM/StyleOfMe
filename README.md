@@ -1,6 +1,6 @@
 # StyleOfMe
 ## Mock up design
-<img src="SS/mockup" >
+<img src="SS/mockup.png" >
 
 
 ## About Style of Me
