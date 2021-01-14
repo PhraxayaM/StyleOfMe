@@ -16,6 +16,7 @@ class HeaderView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "News"
         label.font = UIFont.boldSystemFont(ofSize: fontSize)
+        label.textColor = .white
         return label
     }()
     
@@ -41,7 +42,9 @@ class HeaderView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Top Headlines"
-        label.font = UIFont.boldSystemFont(ofSize: fontSize)
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.textColor = .white
+
         return label
     }()
     
@@ -50,6 +53,13 @@ class HeaderView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         return stackView
+    }()
+    
+    let menuButton: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "menuicon"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     init(fontSize:CGFloat) {
@@ -66,13 +76,16 @@ class HeaderView: UIView {
     func setupView() {
         addSubview(headerStackView)
         addSubview(subheadlineLabel)
+        addSubview(menuButton)
         
         setupConstraints()
     }
     
     func setupConstraints() {
-        NSLayoutConstraint.activate([headerStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                                     headerStackView.topAnchor.constraint(equalTo: topAnchor)] )
+        
+        menuButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        menuButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        NSLayoutConstraint.activate([headerStackView.leadingAnchor.constraint(equalTo: menuButton.leadingAnchor, constant: 130), headerStackView.topAnchor.constraint(equalTo: topAnchor)] )
         
         NSLayoutConstraint.activate([subheadlineLabel.leadingAnchor.constraint(equalTo: leadingAnchor), subheadlineLabel.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: 8), subheadlineLabel.bottomAnchor.constraint(equalTo: bottomAnchor)])
     }

@@ -8,9 +8,10 @@
 import UIKit
 import SafariServices
 
-class ViewController: UIViewController {
+class NewsViewController: UIViewController {
 
     var viewModel = ArticlesViewModel()
+    var weathervm = WeatherViewModel()
     
     private lazy var headerView: HeaderView = {
         let hv = HeaderView(fontSize: 32)
@@ -33,14 +34,19 @@ class ViewController: UIViewController {
     
         setupView()
         fetchNews()
-
+        fetchWeather()
+        navigationController?.isNavigationBarHidden = true
     }
 
     func setupView() {
         view.addSubview(headerView)
         view.addSubview(tableView)
         setupConstraints()
+        
+        
     }
+    
+    
     func setupConstraints() {
         NSLayoutConstraint.activate([headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16), headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10)])
         
@@ -54,11 +60,25 @@ class ViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+    func fetchWeather() {
+        weathervm.getWeather { (weather) in
+            print("hello")
+        }
+//        WeatherNetworkManager.shared.getWeather { (weather) in
+//            print("my weather", weather)
+//        }
+//        weathervm.getWeather { (weather) in
+//            print("weather is: ", weather)
+//        }
+    }
+    
+    
+    
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(viewModel.newsVM.count)
         return viewModel.newsVM.count
     }
     
