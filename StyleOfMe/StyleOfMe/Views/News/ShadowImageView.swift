@@ -11,6 +11,7 @@ final class ShadowImageView: UIView {
     
     var image: UIImage? {
         didSet {
+
             imageView.image = image
         }
     }
@@ -21,6 +22,7 @@ final class ShadowImageView: UIView {
         iv.contentMode = .scaleAspectFit
         iv.layer.cornerRadius = 20
         iv.clipsToBounds = true
+        iv.layer.borderWidth = 3
         return iv
     }()
     

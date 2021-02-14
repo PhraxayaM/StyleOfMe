@@ -34,8 +34,9 @@ class NewsViewController: UIViewController {
     
         setupView()
         fetchNews()
-        fetchWeather()
+//        fetchWeather()
         navigationController?.isNavigationBarHidden = true
+//        navigationController?.tabBarController?.tabBar.isHidden = true
     }
 
     func setupView() {
@@ -59,18 +60,6 @@ class NewsViewController: UIViewController {
         viewModel.getNews { (_) in
             self.tableView.reloadData()
         }
-    }
-    
-    func fetchWeather() {
-        weathervm.getWeather { (weather) in
-            print("hello")
-        }
-//        WeatherNetworkManager.shared.getWeather { (weather) in
-//            print("my weather", weather)
-//        }
-//        weathervm.getWeather { (weather) in
-//            print("weather is: ", weather)
-//        }
     }
     
     

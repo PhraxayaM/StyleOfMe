@@ -12,13 +12,13 @@ class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let index = viewControllers?.firstIndex(of: viewController)
         
-        if index == 2 {
-            
-            let navController = UINavigationController(rootViewController: NewsViewController())
-            navController.modalPresentationStyle = .fullScreen
-            present(navController, animated: true, completion: nil)
-            return false
-        }
+//        if index == 2 {
+//            
+//            let navController = UINavigationController(rootViewController: NewsViewController())
+//            navController.modalPresentationStyle = .fullScreen
+//            present(navController, animated: true, completion: nil)
+//            return false
+//        }
         
         return true
     }
@@ -39,17 +39,19 @@ class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
             //weather
             let searchNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Activity copy"), selectedImage: #imageLiteral(resourceName: "Activity copy"), rootViewController: WeatherVC())
             
+            //journal
+            let journalNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Activity copy"), selectedImage: #imageLiteral(resourceName: "Activity copy"), rootViewController: JournalVC())
             
             tabBar.tintColor = .black
             
             
-            viewControllers = [homeNavController, searchNavController]
+            viewControllers = [homeNavController, searchNavController, journalNavController]
         
             //change tab bar insets
             guard let items = tabBar.items else { return }
             
             for item in items {
-                item.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
+                item.imageInsets = UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
             }
         }
         
@@ -62,5 +64,6 @@ class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
             
             return navController
         }
+    
         
     }

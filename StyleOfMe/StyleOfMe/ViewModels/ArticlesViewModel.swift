@@ -16,11 +16,13 @@ class ArticlesViewModel {
     
     func getNews(completion: @escaping ([NewsViewModel]) -> Void ) {
         NewsNetworkManager.shared.getNews { (news) in
+//            print(news)
             guard let news = news else {return}
             let newsVM = news.map(NewsViewModel.init)
             DispatchQueue.main.async {
                 self.newsVM = newsVM
                 completion(newsVM)
+//                print("newsVM", newsVM)
             }
         }
     }

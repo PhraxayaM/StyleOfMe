@@ -9,16 +9,7 @@ import UIKit
 class WeatherView: UIView {
    
     private var fontSize: CGFloat
-    
-    
-    var forecastVM: ForecastViewModel? {
-        didSet {
-            if let forecastVM = forecastVM {
-                currentTemp.text = String(forecastVM.temp)
-                print("currenttemptext", currentTemp.text)
-            }
-        }
-    }
+
     
     let currentLocation: UILabel = {
            let label = UILabel()
@@ -78,6 +69,7 @@ class WeatherView: UIView {
     let menuButton: UIButton = {
         let button = UIButton()
         button.setImage(#imageLiteral(resourceName: "menuicon"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -95,6 +87,15 @@ class WeatherView: UIView {
         return sv
     }()
     
+    private lazy var headerCircleImage: UIImageView = {
+        let IV = UIImageView()
+        IV.translatesAutoresizingMaskIntoConstraints = false
+        IV.contentMode = .scaleAspectFit
+        let config = UIImage.SymbolConfiguration(pointSize: fontSize, weight: .bold)
+        IV.image = UIImage(systemName: "settings", withConfiguration: config)?.withRenderingMode(.alwaysOriginal)
+        return IV
+    }()
+    
     init(fontSize:CGFloat){
         self.fontSize = fontSize
         super.init(frame: .zero)
@@ -108,7 +109,13 @@ class WeatherView: UIView {
         dateStack.topAnchor.constraint(equalTo: currentLocation.bottomAnchor, constant: 30).isActive = true
         tempStack.leftAnchor.constraint(equalTo: dateStack.rightAnchor, constant: 100).isActive = true
         tempStack.topAnchor.constraint(equalTo: currentLocation.bottomAnchor, constant: 30).isActive = true
-        currentLocation.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        currentLocation.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        currentLocation.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor,constant: 350).isActive = true
+        
+        addSubview(menuButton)
+        menuButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        menuButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        
     }
     
     required init?(coder: NSCoder) {

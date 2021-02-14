@@ -6,11 +6,12 @@
 //
 
 import Foundation
+
+
 class WeatherViewModel {
     
     
     var newsVM = [NewsViewModel]()
-    var weatherVM = [ForecastViewModel]()
     let reuseID = "forecast"
     
     
@@ -25,16 +26,6 @@ class WeatherViewModel {
             }
         }
     }
-    
-    func getWeather(completion: @escaping (Maintest) -> Void) {
-        WeatherNetworkManager.shared.getWeather { (weather) in
-            guard let weather = weather else {return}
-
-            completion(weather)
-            print("weatherVM getweather func", self.weatherVM)
-        }
-    }
-    
     
 
 }
