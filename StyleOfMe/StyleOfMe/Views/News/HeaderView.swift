@@ -16,7 +16,7 @@ class HeaderView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "News"
         label.font = UIFont.boldSystemFont(ofSize: fontSize)
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     
@@ -43,7 +43,7 @@ class HeaderView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Top Headlines"
         label.font = UIFont.boldSystemFont(ofSize: 25)
-        label.textColor = .white
+        label.textColor = .black
 
         return label
     }()

@@ -30,7 +30,8 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.rgb(red: 175, green: 233, blue: 239)
+//        view.backgroundColor = UIColor.rgb(red: 64, green: 90, blue: 65)
+        view.backgroundColor = .white
     
         setupView()
         fetchNews()
@@ -76,6 +77,15 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         let news = viewModel.newsVM[indexPath.row]
         cell?.newsVM = news
         return cell ?? UITableViewCell()
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let news = viewModel.newsVM[indexPath.row]
+        guard let url = URL(string: news.url) else { return }
+        
+        let config = SFSafariViewController.Configuration()
+        let safariViewController = SFSafariViewController(url: url, configuration: config)
+        safariViewController.modalPresentationStyle = .formSheet
+        present(safariViewController, animated: true)
     }
     
     

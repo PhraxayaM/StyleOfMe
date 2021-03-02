@@ -33,14 +33,14 @@ class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
         func setupViewControllers() {
             //home
             
-            let homeNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Paper copy"), selectedImage: #imageLiteral(resourceName: "Paper copy"), rootViewController: NewsViewController())
+            let homeNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "drop"), selectedImage: #imageLiteral(resourceName: "drop"), rootViewController: NewsViewController())
 
             
             //weather
             let searchNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Activity copy"), selectedImage: #imageLiteral(resourceName: "Activity copy"), rootViewController: WeatherVC())
             
             //journal
-            let journalNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Activity copy"), selectedImage: #imageLiteral(resourceName: "Activity copy"), rootViewController: JournalVC())
+            let journalNavController = templateNavController(unselectedImage: #imageLiteral(resourceName: "Paper copy"), selectedImage: #imageLiteral(resourceName: "Paper copy"), rootViewController: JournalList(collectionViewLayout: UICollectionViewFlowLayout()))
             
             tabBar.tintColor = .black
             

@@ -1,4 +1,7 @@
 # StyleOfMe
+
+## Demo
+![Demo](demo3.gif)
 ## Mock up design
 <img src="SS/mockup.png" >
 

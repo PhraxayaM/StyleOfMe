@@ -52,7 +52,8 @@ final class NewsTableViewCell: UITableViewCell {
     func setupView() {
         addSubview(titleLabel)
         addSubview(newsImage)
-        backgroundColor = UIColor.rgb(red: 175, green: 233, blue: 239)
+//        backgroundColor = UIColor.rgb(red: 175, green: 233, blue: 239)
+//        backgroundColor = UIColor.rgb(red: 64, green: 90, blue: 65)
         setupConstraints()
     }
     

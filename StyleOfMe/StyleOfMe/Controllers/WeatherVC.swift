@@ -21,7 +21,8 @@ class WeatherVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.rgb(red: 175, green: 233, blue: 239)
+        view.backgroundColor = UIColor.rgb(red: 218, green: 146, blue: 64)
+        
 //        vm.getIt()
         parser.parse {
             data in
