@@ -34,7 +34,6 @@
 		CD33937A25B13E2100BFB5BF /* JournalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33937925B13E2100BFB5BF /* JournalVC.swift */; };
 		CD49DC3925DA0ECA003C2320 /* Journal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD49DC3725DA0ECA003C2320 /* Journal.xcdatamodeld */; };
 		CD9C225325ED8C0D005AF7C0 /* WeatherWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C225225ED8C0D005AF7C0 /* WeatherWebView.swift */; };
-		CD9C229F25EF0E9C005AF7C0 /* JournalVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C229E25EF0E9B005AF7C0 /* JournalVM.swift */; };
 		CD9C22A725EF154B005AF7C0 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C22A625EF154B005AF7C0 /* Item+CoreDataProperties.swift */; };
 		CDB7744025DB478200FCD1C1 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7743E25DB478200FCD1C1 /* Item+CoreDataClass.swift */; };
 		CDB7744A25DC836000FCD1C1 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7744925DC836000FCD1C1 /* Journal.swift */; };
@@ -73,7 +72,6 @@
 		CD33937925B13E2100BFB5BF /* JournalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalVC.swift; sourceTree = "<group>"; };
 		CD49DC3825DA0ECA003C2320 /* Journal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Journal.xcdatamodel; sourceTree = "<group>"; };
 		CD9C225225ED8C0D005AF7C0 /* WeatherWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWebView.swift; sourceTree = "<group>"; };
-		CD9C229E25EF0E9B005AF7C0 /* JournalVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalVM.swift; sourceTree = "<group>"; };
 		CD9C22A625EF154B005AF7C0 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CDB7743E25DB478200FCD1C1 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		CDB7744925DC836000FCD1C1 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				CD33932A25A9575A00BFB5BF /* NewsViewModel.swift */,
 				CD33932D25A95C0C00BFB5BF /* ArticlesViewModel.swift */,
 				CD33935425AA033D00BFB5BF /* WeatherViewModel.swift */,
-				CD9C229E25EF0E9B005AF7C0 /* JournalVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -344,7 +341,6 @@
 				CD33936625AABF0E00BFB5BF /* Int Ext.swift in Sources */,
 				CDB7744025DB478200FCD1C1 /* Item+CoreDataClass.swift in Sources */,
 				CD33931E25A8E8B700BFB5BF /* Articles.swift in Sources */,
-				CD9C229F25EF0E9C005AF7C0 /* JournalVM.swift in Sources */,
 				CD33937725B043D500BFB5BF /* MainTabBarVC.swift in Sources */,
 				CD33937A25B13E2100BFB5BF /* JournalVC.swift in Sources */,
 				CD33930825A7FD0A00BFB5BF /* SceneDelegate.swift in Sources */,

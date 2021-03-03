@@ -18,7 +18,6 @@ class JournalVC: UIViewController, UITextViewDelegate {
         let hv = JournalViewEntry(frame: CGRect(x: view.frame.midX, y: view.frame.midY, width: 50, height: 50))
         return hv
     }()
-//    var journalList = [Item]()
     var selectedEntry: Item? = nil
     
     override func viewDidLoad() {
