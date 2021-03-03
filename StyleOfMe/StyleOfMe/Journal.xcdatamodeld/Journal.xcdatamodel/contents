@@ -3,8 +3,8 @@
     <entity name="Item" representedClassName="Item" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="entry" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="test" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="103"/>

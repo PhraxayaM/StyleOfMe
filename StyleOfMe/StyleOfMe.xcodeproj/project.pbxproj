@@ -28,20 +28,18 @@
 		CD33934D25A9FB7600BFB5BF /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33934C25A9FB7600BFB5BF /* WeatherModel.swift */; };
 		CD33935225AA029500BFB5BF /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33935125AA029500BFB5BF /* WeatherVC.swift */; };
 		CD33935525AA033D00BFB5BF /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33935425AA033D00BFB5BF /* WeatherViewModel.swift */; };
-		CD33935825AA04CD00BFB5BF /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33935725AA04CD00BFB5BF /* ForecastViewModel.swift */; };
 		CD33935E25AA0F6400BFB5BF /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33935D25AA0F6400BFB5BF /* WeatherView.swift */; };
 		CD33936625AABF0E00BFB5BF /* Int Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33936525AABF0E00BFB5BF /* Int Ext.swift */; };
 		CD33937725B043D500BFB5BF /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33937625B043D500BFB5BF /* MainTabBarVC.swift */; };
 		CD33937A25B13E2100BFB5BF /* JournalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33937925B13E2100BFB5BF /* JournalVC.swift */; };
 		CD49DC3925DA0ECA003C2320 /* Journal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD49DC3725DA0ECA003C2320 /* Journal.xcdatamodeld */; };
 		CD9C225325ED8C0D005AF7C0 /* WeatherWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C225225ED8C0D005AF7C0 /* WeatherWebView.swift */; };
-		CD9C225925EDDC56005AF7C0 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C225825EDDC55005AF7C0 /* test.swift */; };
+		CD9C229F25EF0E9C005AF7C0 /* JournalVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C229E25EF0E9B005AF7C0 /* JournalVM.swift */; };
+		CD9C22A725EF154B005AF7C0 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C22A625EF154B005AF7C0 /* Item+CoreDataProperties.swift */; };
 		CDB7744025DB478200FCD1C1 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7743E25DB478200FCD1C1 /* Item+CoreDataClass.swift */; };
-		CDB7744125DB478200FCD1C1 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7743F25DB478200FCD1C1 /* Item+CoreDataProperties.swift */; };
 		CDB7744A25DC836000FCD1C1 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7744925DC836000FCD1C1 /* Journal.swift */; };
 		CDBD68F825D8A750001D4C34 /* JournalViewDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD68F725D8A74F001D4C34 /* JournalViewDate.swift */; };
 		CDBD68FE25D8B495001D4C34 /* JournalViewEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD68FD25D8B495001D4C34 /* JournalViewEntry.swift */; };
-		CDF1AA8B25DC90EB00CFF700 /* JournalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF1AA8A25DC90EB00CFF700 /* JournalListVC.swift */; };
 		CDF1AA8E25DC936500CFF700 /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF1AA8D25DC936500CFF700 /* JournalCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,20 +67,18 @@
 		CD33934C25A9FB7600BFB5BF /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		CD33935125AA029500BFB5BF /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		CD33935425AA033D00BFB5BF /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
-		CD33935725AA04CD00BFB5BF /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		CD33935D25AA0F6400BFB5BF /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		CD33936525AABF0E00BFB5BF /* Int Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int Ext.swift"; sourceTree = "<group>"; };
 		CD33937625B043D500BFB5BF /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		CD33937925B13E2100BFB5BF /* JournalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalVC.swift; sourceTree = "<group>"; };
 		CD49DC3825DA0ECA003C2320 /* Journal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Journal.xcdatamodel; sourceTree = "<group>"; };
 		CD9C225225ED8C0D005AF7C0 /* WeatherWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWebView.swift; sourceTree = "<group>"; };
-		CD9C225825EDDC55005AF7C0 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		CD9C229E25EF0E9B005AF7C0 /* JournalVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalVM.swift; sourceTree = "<group>"; };
+		CD9C22A625EF154B005AF7C0 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CDB7743E25DB478200FCD1C1 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		CDB7743F25DB478200FCD1C1 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		CDB7744925DC836000FCD1C1 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		CDBD68F725D8A74F001D4C34 /* JournalViewDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewDate.swift; sourceTree = "<group>"; };
 		CDBD68FD25D8B495001D4C34 /* JournalViewEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewEntry.swift; sourceTree = "<group>"; };
-		CDF1AA8A25DC90EB00CFF700 /* JournalListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListVC.swift; sourceTree = "<group>"; };
 		CDF1AA8D25DC936500CFF700 /* JournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +96,7 @@
 		CD3392F925A7FD0A00BFB5BF = {
 			isa = PBXGroup;
 			children = (
+				CD9C22A625EF154B005AF7C0 /* Item+CoreDataProperties.swift */,
 				CD33930425A7FD0A00BFB5BF /* StyleOfMe */,
 				CD33930325A7FD0A00BFB5BF /* Products */,
 			);
@@ -117,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				CDB7743E25DB478200FCD1C1 /* Item+CoreDataClass.swift */,
-				CDB7743F25DB478200FCD1C1 /* Item+CoreDataProperties.swift */,
 				CD33934225A9F73700BFB5BF /* Extensions */,
 				CD33933425A9663500BFB5BF /* Views */,
 				CD33932925A9574C00BFB5BF /* ViewModels */,
@@ -150,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				CD33932425A9018500BFB5BF /* NewsNetworkManager.swift */,
-				CD9C225825EDDC55005AF7C0 /* test.swift */,
 				CD33934725A9FB0C00BFB5BF /* WeatherNetworkManager.swift */,
 			);
 			path = Network;
@@ -164,7 +159,6 @@
 				CD33937625B043D500BFB5BF /* MainTabBarVC.swift */,
 				CD33937925B13E2100BFB5BF /* JournalVC.swift */,
 				CD29A5F225DD94300009D6BE /* JournalList.swift */,
-				CDF1AA8A25DC90EB00CFF700 /* JournalListVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,8 +168,8 @@
 			children = (
 				CD33932A25A9575A00BFB5BF /* NewsViewModel.swift */,
 				CD33932D25A95C0C00BFB5BF /* ArticlesViewModel.swift */,
-				CD33935725AA04CD00BFB5BF /* ForecastViewModel.swift */,
 				CD33935425AA033D00BFB5BF /* WeatherViewModel.swift */,
+				CD9C229E25EF0E9B005AF7C0 /* JournalVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -329,11 +323,9 @@
 				CD33933D25A9844200BFB5BF /* NewsTableViewCell.swift in Sources */,
 				CD33930625A7FD0A00BFB5BF /* AppDelegate.swift in Sources */,
 				CD33934825A9FB0C00BFB5BF /* WeatherNetworkManager.swift in Sources */,
-				CDF1AA8B25DC90EB00CFF700 /* JournalListVC.swift in Sources */,
-				CD33935825AA04CD00BFB5BF /* ForecastViewModel.swift in Sources */,
 				CD33935225AA029500BFB5BF /* WeatherVC.swift in Sources */,
 				CDBD68F825D8A750001D4C34 /* JournalViewDate.swift in Sources */,
-				CD9C225925EDDC56005AF7C0 /* test.swift in Sources */,
+				CD9C22A725EF154B005AF7C0 /* Item+CoreDataProperties.swift in Sources */,
 				CD33934525A9F8B100BFB5BF /* ColorExtension.swift in Sources */,
 				CD29A5F625DD9F650009D6BE /* AnchorExt.swift in Sources */,
 				CDF1AA8E25DC936500CFF700 /* JournalCell.swift in Sources */,
@@ -347,12 +339,12 @@
 				CD49DC3925DA0ECA003C2320 /* Journal.xcdatamodeld in Sources */,
 				CD33932E25A95C0C00BFB5BF /* ArticlesViewModel.swift in Sources */,
 				CD33935525AA033D00BFB5BF /* WeatherViewModel.swift in Sources */,
-				CDB7744125DB478200FCD1C1 /* Item+CoreDataProperties.swift in Sources */,
 				CD9C225325ED8C0D005AF7C0 /* WeatherWebView.swift in Sources */,
 				CD33935E25AA0F6400BFB5BF /* WeatherView.swift in Sources */,
 				CD33936625AABF0E00BFB5BF /* Int Ext.swift in Sources */,
 				CDB7744025DB478200FCD1C1 /* Item+CoreDataClass.swift in Sources */,
 				CD33931E25A8E8B700BFB5BF /* Articles.swift in Sources */,
+				CD9C229F25EF0E9C005AF7C0 /* JournalVM.swift in Sources */,
 				CD33937725B043D500BFB5BF /* MainTabBarVC.swift in Sources */,
 				CD33937A25B13E2100BFB5BF /* JournalVC.swift in Sources */,
 				CD33930825A7FD0A00BFB5BF /* SceneDelegate.swift in Sources */,

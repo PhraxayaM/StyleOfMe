@@ -49,6 +49,8 @@ class JournalVC: UIViewController, UITextViewDelegate {
             let newEntry = Item(entity: entity!, insertInto: context)
             newEntry.name = entry
     //        newEntry.date = timestamp
+            newEntry.image = emojiStatus
+//            print("new entry", newEntry.image)
             do {
                 try context.save()
                 journalList.insert(newEntry, at: 0)
@@ -58,6 +60,7 @@ class JournalVC: UIViewController, UITextViewDelegate {
                 print("context save error")
             }
         } else {
+            //editting
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
             do {
                 let results:NSArray = try context.fetch(request) as NSArray
@@ -65,6 +68,7 @@ class JournalVC: UIViewController, UITextViewDelegate {
                     let entry = result as! Item
                     if(entry == selectedEntry) {
                         entry.name = journalViewEntry.text
+                        entry.image = emojiStatus
                         try context.save()
                         navigationController?.popViewController(animated: false)
                     }
@@ -103,12 +107,74 @@ class JournalVC: UIViewController, UITextViewDelegate {
         journalViewEntry.layer.cornerRadius = 25
         journalViewEntry.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         
-        journalViewEntry.text = "Placeholder"
         journalViewEntry.textColor = UIColor.lightGray
 
         journalViewEntry.becomeFirstResponder()
 
         journalViewEntry.selectedTextRange = journalViewEntry.textRange(from: journalViewEntry.beginningOfDocument, to: journalViewEntry.beginningOfDocument)
-
+        
+//        view.addSubview(angryEmoji)
+        view.addSubview(emojiStatusPick)
+//        angryEmoji.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 10).isActive = true
+        emojiStatusPick.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emojiStatusPick.bottomAnchor.constraint(equalTo: journalViewEntry.bottomAnchor).isActive = true
+        angryEmoji.addTarget(self, action: #selector(setupEmoji), for: .touchUpInside)
+        shockedEmoji.addTarget(self, action: #selector(setupEmoji), for: .touchUpInside)
+        annoyedEmoji.addTarget(self, action: #selector(setupEmoji), for: .touchUpInside)
+        hopefulEmoji.addTarget(self, action: #selector(setupEmoji), for: .touchUpInside)
+    }
+    
+    private lazy var emojiStatusPick: UIStackView = {
+        let sv = UIStackView(arrangedSubviews: [angryEmoji, annoyedEmoji, hopefulEmoji, shockedEmoji])
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        sv.axis = .horizontal
+        return sv
+    }()
+    
+    let angryEmoji: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "angry"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let shockedEmoji: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "shocked"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let annoyedEmoji: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "annoyed"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let hopefulEmoji: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "hopeful"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    var emojiStatus = "shocked"
+    @objc func setupEmoji(sender: UIButton) {
+//        print("hello")
+//        emojiStatus = "angry"
+        switch sender {
+        case angryEmoji:
+            emojiStatus = "angry"
+        case shockedEmoji:
+            emojiStatus = "shocked"
+        case hopefulEmoji:
+            emojiStatus = "hopeful"
+        case annoyedEmoji:
+            emojiStatus = "annoyed"
+        default:
+            print("default")
+            break;
+        }
     }
 }

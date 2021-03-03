@@ -31,8 +31,6 @@ class JournalList: UICollectionViewController, UICollectionViewDelegateFlowLayou
                 for result in results {
                     let entry = result as! Item
                     journalList.insert(entry, at: 0)
-                    
-//                    self.collectionView.reloadData()
 
                 }
             }
@@ -60,6 +58,7 @@ class JournalList: UICollectionViewController, UICollectionViewDelegateFlowLayou
     override func viewDidAppear(_ animated: Bool) {
             self.collectionView.reloadData()
         print("reloading", journalList.count)
+        print(journalList)
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -84,14 +83,22 @@ class JournalList: UICollectionViewController, UICollectionViewDelegateFlowLayou
 //        cell.titleLabel.text = thisJournal.name
 //        print("cv", journalList)
         
-        cell.titleLabel.text = journalList[indexPath.row].name
-        
+        cell.entryText.text = journalList[indexPath.row].name
+        let emojiImage = journalList[indexPath.row].image
+        cell.emojiIV.image = UIImage.init(imageLiteralResourceName: emojiImage ?? "temp")
+        cell.clipsToBounds = true
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 100)
+        let width  = (view.frame.width-20)/2
+        
+ 
+        return CGSize(width: width, height: 100)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
     
     
