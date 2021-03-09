@@ -59,6 +59,7 @@ class HeaderView: UIView {
         let button = UIButton()
         button.setImage(#imageLiteral(resourceName: "menuicon"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     

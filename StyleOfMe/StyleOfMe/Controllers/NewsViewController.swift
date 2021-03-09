@@ -30,14 +30,16 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = UIColor.rgb(red: 64, green: 90, blue: 65)
+
         view.backgroundColor = .white
-    
+        title = "News"
+
         setupView()
         fetchNews()
-//        fetchWeather()
+        headerView.menuButton.addTarget(self, action: #selector(openMenu), for: .touchUpInside)
+        
         navigationController?.isNavigationBarHidden = true
-//        navigationController?.tabBarController?.tabBar.isHidden = true
+
     }
 
     func setupView() {
@@ -47,7 +49,9 @@ class NewsViewController: UIViewController {
         
         
     }
-    
+    @objc func openMenu(_ sender: UIButton) {
+        print("menu")
+    }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16), headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10)])

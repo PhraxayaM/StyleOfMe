@@ -32,9 +32,20 @@
 		CD33936625AABF0E00BFB5BF /* Int Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33936525AABF0E00BFB5BF /* Int Ext.swift */; };
 		CD33937725B043D500BFB5BF /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33937625B043D500BFB5BF /* MainTabBarVC.swift */; };
 		CD33937A25B13E2100BFB5BF /* JournalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33937925B13E2100BFB5BF /* JournalVC.swift */; };
+		CD380D5D25F163E7000C7B6D /* JournalListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD380D5C25F163E7000C7B6D /* JournalListVC.swift */; };
+		CD380D6125F19EBF000C7B6D /* MilestonesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD380D6025F19EBF000C7B6D /* MilestonesViewCell.swift */; };
+		CD380D6D25F2A5A1000C7B6D /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD380D6C25F2A5A1000C7B6D /* CoreDataStorage.swift */; };
+		CD380D7525F2B062000C7B6D /* JournalEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD380D7325F2B062000C7B6D /* JournalEntry+CoreDataClass.swift */; };
+		CD380D7625F2B062000C7B6D /* JournalEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD380D7425F2B062000C7B6D /* JournalEntry+CoreDataProperties.swift */; };
+		CD380D7925F2B20F000C7B6D /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD380D7825F2B20F000C7B6D /* JournalEntry.swift */; };
+		CD380D7C25F2CB50000C7B6D /* JournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD380D7B25F2CB50000C7B6D /* JournalViewModel.swift */; };
+		CD380D8B25F60DF8000C7B6D /* Milestones+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD380D8925F60DF7000C7B6D /* Milestones+CoreDataClass.swift */; };
+		CD380D8C25F60DF8000C7B6D /* Milestones+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD380D8A25F60DF7000C7B6D /* Milestones+CoreDataProperties.swift */; };
+		CD380D9125F80128000C7B6D /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD380D9025F80128000C7B6D /* ToDoList.swift */; };
 		CD49DC3925DA0ECA003C2320 /* Journal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD49DC3725DA0ECA003C2320 /* Journal.xcdatamodeld */; };
 		CD9C225325ED8C0D005AF7C0 /* WeatherWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C225225ED8C0D005AF7C0 /* WeatherWebView.swift */; };
 		CD9C22A725EF154B005AF7C0 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C22A625EF154B005AF7C0 /* Item+CoreDataProperties.swift */; };
+		CD9C22AE25F084D4005AF7C0 /* NewsTopicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9C22AD25F084D3005AF7C0 /* NewsTopicsVC.swift */; };
 		CDB7744025DB478200FCD1C1 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7743E25DB478200FCD1C1 /* Item+CoreDataClass.swift */; };
 		CDB7744A25DC836000FCD1C1 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7744925DC836000FCD1C1 /* Journal.swift */; };
 		CDBD68F825D8A750001D4C34 /* JournalViewDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD68F725D8A74F001D4C34 /* JournalViewDate.swift */; };
@@ -70,10 +81,21 @@
 		CD33936525AABF0E00BFB5BF /* Int Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int Ext.swift"; sourceTree = "<group>"; };
 		CD33937625B043D500BFB5BF /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		CD33937925B13E2100BFB5BF /* JournalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalVC.swift; sourceTree = "<group>"; };
+		CD380D5C25F163E7000C7B6D /* JournalListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListVC.swift; sourceTree = "<group>"; };
+		CD380D6025F19EBF000C7B6D /* MilestonesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonesViewCell.swift; sourceTree = "<group>"; };
+		CD380D6C25F2A5A1000C7B6D /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		CD380D7325F2B062000C7B6D /* JournalEntry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CD380D7425F2B062000C7B6D /* JournalEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CD380D7825F2B20F000C7B6D /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		CD380D7B25F2CB50000C7B6D /* JournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewModel.swift; sourceTree = "<group>"; };
+		CD380D8925F60DF7000C7B6D /* Milestones+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Milestones+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CD380D8A25F60DF7000C7B6D /* Milestones+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Milestones+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CD380D9025F80128000C7B6D /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 		CD49DC3825DA0ECA003C2320 /* Journal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Journal.xcdatamodel; sourceTree = "<group>"; };
 		CD9C225225ED8C0D005AF7C0 /* WeatherWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWebView.swift; sourceTree = "<group>"; };
 		CD9C22A625EF154B005AF7C0 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CDB7743E25DB478200FCD1C1 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		CD9C22AD25F084D3005AF7C0 /* NewsTopicsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTopicsVC.swift; sourceTree = "<group>"; };
+		CDB7743E25DB478200FCD1C1 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "Resources/Item+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		CDB7744925DC836000FCD1C1 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		CDBD68F725D8A74F001D4C34 /* JournalViewDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewDate.swift; sourceTree = "<group>"; };
 		CDBD68FD25D8B495001D4C34 /* JournalViewEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewEntry.swift; sourceTree = "<group>"; };
@@ -94,7 +116,7 @@
 		CD3392F925A7FD0A00BFB5BF = {
 			isa = PBXGroup;
 			children = (
-				CD9C22A625EF154B005AF7C0 /* Item+CoreDataProperties.swift */,
+				CD380D6725F2A546000C7B6D /* Resources */,
 				CD33930425A7FD0A00BFB5BF /* StyleOfMe */,
 				CD33930325A7FD0A00BFB5BF /* Products */,
 			);
@@ -111,7 +133,6 @@
 		CD33930425A7FD0A00BFB5BF /* StyleOfMe */ = {
 			isa = PBXGroup;
 			children = (
-				CDB7743E25DB478200FCD1C1 /* Item+CoreDataClass.swift */,
 				CD33934225A9F73700BFB5BF /* Extensions */,
 				CD33933425A9663500BFB5BF /* Views */,
 				CD33932925A9574C00BFB5BF /* ViewModels */,
@@ -155,8 +176,11 @@
 				CD33930925A7FD0A00BFB5BF /* NewsViewController.swift */,
 				CD33935125AA029500BFB5BF /* WeatherVC.swift */,
 				CD33937625B043D500BFB5BF /* MainTabBarVC.swift */,
-				CD33937925B13E2100BFB5BF /* JournalVC.swift */,
 				CD29A5F225DD94300009D6BE /* JournalList.swift */,
+				CD380D5C25F163E7000C7B6D /* JournalListVC.swift */,
+				CD33937925B13E2100BFB5BF /* JournalVC.swift */,
+				CD9C22AD25F084D3005AF7C0 /* NewsTopicsVC.swift */,
+				CD380D9025F80128000C7B6D /* ToDoList.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -167,6 +191,7 @@
 				CD33932A25A9575A00BFB5BF /* NewsViewModel.swift */,
 				CD33932D25A95C0C00BFB5BF /* ArticlesViewModel.swift */,
 				CD33935425AA033D00BFB5BF /* WeatherViewModel.swift */,
+				CD380D7B25F2CB50000C7B6D /* JournalViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -226,10 +251,25 @@
 			path = Weather;
 			sourceTree = "<group>";
 		};
+		CD380D6725F2A546000C7B6D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD380D6C25F2A5A1000C7B6D /* CoreDataStorage.swift */,
+				CD9C22A625EF154B005AF7C0 /* Item+CoreDataProperties.swift */,
+				CDB7743E25DB478200FCD1C1 /* Item+CoreDataClass.swift */,
+				CD380D8925F60DF7000C7B6D /* Milestones+CoreDataClass.swift */,
+				CD380D8A25F60DF7000C7B6D /* Milestones+CoreDataProperties.swift */,
+				CD380D7325F2B062000C7B6D /* JournalEntry+CoreDataClass.swift */,
+				CD380D7425F2B062000C7B6D /* JournalEntry+CoreDataProperties.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CDB7744825DC833A00FCD1C1 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
 				CDB7744925DC836000FCD1C1 /* Journal.swift */,
+				CD380D7825F2B20F000C7B6D /* JournalEntry.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -240,6 +280,7 @@
 				CDBD68F725D8A74F001D4C34 /* JournalViewDate.swift */,
 				CDBD68FD25D8B495001D4C34 /* JournalViewEntry.swift */,
 				CDF1AA8D25DC936500CFF700 /* JournalCell.swift */,
+				CD380D6025F19EBF000C7B6D /* MilestonesViewCell.swift */,
 			);
 			path = JournalView;
 			sourceTree = "<group>";
@@ -314,17 +355,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD380D7C25F2CB50000C7B6D /* JournalViewModel.swift in Sources */,
 				CD33930A25A7FD0A00BFB5BF /* NewsViewController.swift in Sources */,
 				CDBD68FE25D8B495001D4C34 /* JournalViewEntry.swift in Sources */,
 				CDB7744A25DC836000FCD1C1 /* Journal.swift in Sources */,
 				CD33933D25A9844200BFB5BF /* NewsTableViewCell.swift in Sources */,
 				CD33930625A7FD0A00BFB5BF /* AppDelegate.swift in Sources */,
+				CD380D6D25F2A5A1000C7B6D /* CoreDataStorage.swift in Sources */,
+				CD380D7925F2B20F000C7B6D /* JournalEntry.swift in Sources */,
 				CD33934825A9FB0C00BFB5BF /* WeatherNetworkManager.swift in Sources */,
 				CD33935225AA029500BFB5BF /* WeatherVC.swift in Sources */,
+				CD380D7525F2B062000C7B6D /* JournalEntry+CoreDataClass.swift in Sources */,
+				CD380D7625F2B062000C7B6D /* JournalEntry+CoreDataProperties.swift in Sources */,
 				CDBD68F825D8A750001D4C34 /* JournalViewDate.swift in Sources */,
 				CD9C22A725EF154B005AF7C0 /* Item+CoreDataProperties.swift in Sources */,
 				CD33934525A9F8B100BFB5BF /* ColorExtension.swift in Sources */,
 				CD29A5F625DD9F650009D6BE /* AnchorExt.swift in Sources */,
+				CD380D8C25F60DF8000C7B6D /* Milestones+CoreDataProperties.swift in Sources */,
+				CD380D8B25F60DF8000C7B6D /* Milestones+CoreDataClass.swift in Sources */,
 				CDF1AA8E25DC936500CFF700 /* JournalCell.swift in Sources */,
 				CD33932125A8E93D00BFB5BF /* NetworkProperties.swift in Sources */,
 				CD33933625A9665100BFB5BF /* ShadowImageView.swift in Sources */,
@@ -333,16 +381,20 @@
 				CD33932B25A9575B00BFB5BF /* NewsViewModel.swift in Sources */,
 				CD29A5F325DD94300009D6BE /* JournalList.swift in Sources */,
 				CD33934D25A9FB7600BFB5BF /* WeatherModel.swift in Sources */,
+				CD380D6125F19EBF000C7B6D /* MilestonesViewCell.swift in Sources */,
 				CD49DC3925DA0ECA003C2320 /* Journal.xcdatamodeld in Sources */,
 				CD33932E25A95C0C00BFB5BF /* ArticlesViewModel.swift in Sources */,
 				CD33935525AA033D00BFB5BF /* WeatherViewModel.swift in Sources */,
 				CD9C225325ED8C0D005AF7C0 /* WeatherWebView.swift in Sources */,
+				CD9C22AE25F084D4005AF7C0 /* NewsTopicsVC.swift in Sources */,
 				CD33935E25AA0F6400BFB5BF /* WeatherView.swift in Sources */,
 				CD33936625AABF0E00BFB5BF /* Int Ext.swift in Sources */,
 				CDB7744025DB478200FCD1C1 /* Item+CoreDataClass.swift in Sources */,
 				CD33931E25A8E8B700BFB5BF /* Articles.swift in Sources */,
 				CD33937725B043D500BFB5BF /* MainTabBarVC.swift in Sources */,
 				CD33937A25B13E2100BFB5BF /* JournalVC.swift in Sources */,
+				CD380D9125F80128000C7B6D /* ToDoList.swift in Sources */,
+				CD380D5D25F163E7000C7B6D /* JournalListVC.swift in Sources */,
 				CD33930825A7FD0A00BFB5BF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

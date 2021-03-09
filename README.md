@@ -1,7 +1,7 @@
 # StyleOfMe
 
 ## Demo
-![NewsDemo](newsdemo.gif) ![JournalDemo](journaldemo.gif)
+![NewsDemo](newsdemo.gif) ![JournalDemo](journaldemo2.gif)
 ## Mock up design
 <img src="SS/mockup.png" >
 

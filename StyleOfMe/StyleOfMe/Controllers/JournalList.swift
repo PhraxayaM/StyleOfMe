@@ -18,6 +18,7 @@ class JournalList: UICollectionViewController, UICollectionViewDelegateFlowLayou
     var firstLoad = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Journal"
         collectionView.backgroundColor = UIColor.rgb(red: 245, green: 224, blue: 186)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -31,7 +32,6 @@ class JournalList: UICollectionViewController, UICollectionViewDelegateFlowLayou
                 for result in results {
                     let entry = result as! Item
                     journalList.insert(entry, at: 0)
-
                 }
             }
             catch {
@@ -42,18 +42,15 @@ class JournalList: UICollectionViewController, UICollectionViewDelegateFlowLayou
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newEntry))
         
         collectionView.register(JournalCell.self, forCellWithReuseIdentifier: cellId)
-        
-//        print("journalvc", journalList)
-        
+                
         collectionView.alwaysBounceVertical = true
         collectionView.keyboardDismissMode  = .onDrag
         
     }
+    
     @objc func newEntry() {
         navigationController?.pushViewController(JournalVC(), animated: false)
     }
-    
-//    overri
     
     override func viewDidAppear(_ animated: Bool) {
             self.collectionView.reloadData()
@@ -78,28 +75,23 @@ class JournalList: UICollectionViewController, UICollectionViewDelegateFlowLayou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! JournalCell
         
         
-//        let thisJournal: Item!
-//        thisJournal = journalList[indexPath.row]
-//        cell.titleLabel.text = thisJournal.name
-//        print("cv", journalList)
         
         cell.entryText.text = journalList[indexPath.row].name
+        cell.dateLabel.text = journalList[indexPath.row].date
         let emojiImage = journalList[indexPath.row].image
         cell.emojiIV.image = UIImage.init(imageLiteralResourceName: emojiImage ?? "temp")
         cell.clipsToBounds = true
         return cell
     }
     
-    
+     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width  = (view.frame.width-20)/2
         
  
         return CGSize(width: width, height: 100)
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
+    
     
     
 }

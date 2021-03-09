@@ -6,7 +6,17 @@
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="JournalEntry" representedClassName="JournalEntry" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="entry" optional="YES" attributeType="String"/>
+        <attribute name="img" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Milestones" representedClassName="Milestones" syncable="YES">
+        <attribute name="goals" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="JournalEntry" positionX="-63" positionY="9" width="128" height="88"/>
+        <element name="Milestones" positionX="-54" positionY="27" width="128" height="58"/>
     </elements>
 </model>

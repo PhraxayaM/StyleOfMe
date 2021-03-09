@@ -19,15 +19,14 @@ class JournalVC: UIViewController, UITextViewDelegate {
         return hv
     }()
     var selectedEntry: Item? = nil
+    var selectedJournal: JournalEntry? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
-        
-        if(selectedEntry != nil) {
-            journalViewEntry.text = selectedEntry?.name
-            print("selected", selectedEntry?.name)
+        if(selectedJournal != nil) {
+            journalViewEntry.text = selectedJournal?.entry
+            print("selected", selectedJournal?.entry)
         }
     }
     
@@ -35,19 +34,62 @@ class JournalVC: UIViewController, UITextViewDelegate {
     
     var entryLog = [Item]()
     
+    @objc func saveJournal(_ sender: UIButton) {
+        guard let entry = journalViewEntry.text else { return }
+        let timestamp = DateFormatter.localizedString(from: NSDate() as Date, dateStyle: .medium, timeStyle: .none)
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDel.persistentContainer.viewContext
+        let journalContext = CoreDataStorage.shared.persistentContainer.viewContext
+        if(selectedEntry == nil) {
+            let journalentity = NSEntityDescription.entity(forEntityName: "JournalEntry", in: journalContext)
+//            let entryJournal = JournalEntry(entity: journalentity!, insertInto: journalContext)
+//            entryJournal.entry = entry
+//            entryJournal.img = emojiStatus
+//            entryJournal.date = timestamp
+            do {
+                try context.save()
+                CoreDataStorage.shared.saveJournal(entry: entry, date: timestamp, img: emojiStatus)
+                
+                
+                print("Fetching coredata", CoreDataStorage.shared.fetchEntries())
+                navigationController?.popViewController(animated: false)
+            }
+            catch {
+                print("context save error")
+            }
+        } else {
+            //editting
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "JournalEntry")
+            do {
+                let results:NSArray = try context.fetch(request) as NSArray
+                for result in results {
+                    let entry = result as! JournalEntry
+                    if(entry == selectedEntry) {
+                        entry.entry = journalViewEntry.text
+                        entry.img = emojiStatus
+                        
+                        try context.save()
+                        navigationController?.popViewController(animated: false)
+                    }
+                }
+            }
+            catch {
+                print("Fetch Failed")
+            }
+        }
+    }
     
     
     @objc func saveEntry(_ sender: UIButton) {
-        print("button")
         guard let entry = journalViewEntry.text else { return }
-        
+        let timestamp = DateFormatter.localizedString(from: NSDate() as Date, dateStyle: .medium, timeStyle: .none)
         let appDel = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDel.persistentContainer.viewContext
         if(selectedEntry == nil) {
             let entity = NSEntityDescription.entity(forEntityName: "Item", in: context)
             let newEntry = Item(entity: entity!, insertInto: context)
             newEntry.name = entry
-    //        newEntry.date = timestamp
+            newEntry.date = timestamp
             newEntry.image = emojiStatus
 //            print("new entry", newEntry.image)
             do {
@@ -83,9 +125,14 @@ class JournalVC: UIViewController, UITextViewDelegate {
     }
     
     func setupView() {
-        
         view.backgroundColor = UIColor.rgb(red: 199, green: 202, blue: 248)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveEntry(_:)))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveEntry(_:)))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveJournal(_:)))
+        
+//        let saveJournal = UIBarButtonItem(image: .add, style: .plain, target: self, action: #selector(saveEntry(_:)))
+        let saveJournal = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveJournal(_:)))
+        let addMilestone = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addMilestone(_:)))
+        navigationItem.rightBarButtonItems = [addMilestone, saveJournal]
         view.addSubview(journalViewDate)
         journalViewDate.translatesAutoresizingMaskIntoConstraints = false
         journalViewDate.topAnchor.constraint(equalTo: view.topAnchor,constant: 100).isActive = true
@@ -112,9 +159,8 @@ class JournalVC: UIViewController, UITextViewDelegate {
 
         journalViewEntry.selectedTextRange = journalViewEntry.textRange(from: journalViewEntry.beginningOfDocument, to: journalViewEntry.beginningOfDocument)
         
-//        view.addSubview(angryEmoji)
         view.addSubview(emojiStatusPick)
-//        angryEmoji.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 10).isActive = true
+
         emojiStatusPick.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         emojiStatusPick.bottomAnchor.constraint(equalTo: journalViewEntry.bottomAnchor).isActive = true
         angryEmoji.addTarget(self, action: #selector(setupEmoji), for: .touchUpInside)
@@ -122,7 +168,27 @@ class JournalVC: UIViewController, UITextViewDelegate {
         annoyedEmoji.addTarget(self, action: #selector(setupEmoji), for: .touchUpInside)
         hopefulEmoji.addTarget(self, action: #selector(setupEmoji), for: .touchUpInside)
     }
-    
+    @objc func addMilestone(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Add Milestone", message: "What milestone would you like to add?", preferredStyle: .alert)
+        print("milestooone")
+        alert.addTextField()
+        let milestoneContext = CoreDataStorage.shared.persistentContainer.viewContext
+        
+        let saveButton = UIAlertAction(title: "Save", style: .default) { (action) in
+            let tf = alert.textFields![0]
+            let milestone = Milestones(context: milestoneContext)
+            milestone.goals = tf.text
+            do {
+                try milestoneContext.save()
+            } catch {
+                
+            }
+        }
+        
+        alert.addAction(saveButton)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
     private lazy var emojiStatusPick: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [angryEmoji, annoyedEmoji, hopefulEmoji, shockedEmoji])
         sv.translatesAutoresizingMaskIntoConstraints = false
@@ -160,8 +226,6 @@ class JournalVC: UIViewController, UITextViewDelegate {
     
     var emojiStatus = "shocked"
     @objc func setupEmoji(sender: UIButton) {
-//        print("hello")
-//        emojiStatus = "angry"
         switch sender {
         case angryEmoji:
             emojiStatus = "angry"

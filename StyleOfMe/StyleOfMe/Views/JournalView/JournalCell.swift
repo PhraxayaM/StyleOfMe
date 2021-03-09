@@ -15,11 +15,26 @@ class JournalCell: UICollectionViewCell {
         iv.image = UIImage(imageLiteralResourceName: "shocked")
         return iv
     }()
+    var dateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "date"
+        return label
+    }()
     var entryText: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+//        label.backgroundColor = .red
         return label
+    }()
+    
+    var journalIconIV: UIImageView = {
+        let iv = UIImageView()
+//        iv.backgroundColor = .red
+        iv.clipsToBounds = true
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.image = UIImage(imageLiteralResourceName: "book")
+        return iv
     }()
     
     override init(frame: CGRect) {
@@ -27,9 +42,13 @@ class JournalCell: UICollectionViewCell {
         
         addSubview(entryText)
         addSubview(emojiIV)
-
+        addSubview(dateLabel)
+        addSubview(journalIconIV)
+        entryText.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         emojiIV.anchor(top: nil, left: leftAnchor, bottom: nil, right: entryText.leftAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 10, width: 50, height: 50)
         emojiIV.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        dateLabel.anchor(top: nil, left: nil, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 120, height: 50)
+        dateLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
        
         let seperatorView = UIView()
         seperatorView.backgroundColor = UIColor(white: 0, alpha: 0.5)
@@ -44,13 +63,20 @@ class JournalCell: UICollectionViewCell {
     
     func setupView() {
         addSubview(entryText)
-//        addSubview(newsImage)
-        backgroundColor = UIColor.rgb(red: 175, green: 233, blue: 239)
+
         setupConstraints()
+    }
+    func configure(_ journalViewModel: JournalEntry) {
+        self.dateLabel.text = journalViewModel.date
+        self.entryText.text = journalViewModel.entry
+        self.emojiIV.image = UIImage(imageLiteralResourceName: journalViewModel.img ?? "drop")
+        
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([entryText.leadingAnchor.constraint(equalTo: leadingAnchor), entryText.rightAnchor.constraint(equalTo: trailingAnchor), emojiIV.topAnchor.constraint(equalTo: topAnchor), entryText.heightAnchor.constraint(equalToConstant: 200)])
+        NSLayoutConstraint.activate([ journalIconIV.topAnchor.constraint(equalTo: topAnchor)])
         
     }
+    
 }

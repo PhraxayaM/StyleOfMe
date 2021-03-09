@@ -8,7 +8,7 @@
 
 struct Journals: Decodable {
     let entry: String?
-    let emoji: String?
+    let img: String?
     let date: String?
 }
 

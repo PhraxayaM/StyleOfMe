@@ -48,7 +48,6 @@ class WeatherVC: UIViewController {
         view.addSubview(weatherView)
         view.addSubview(imageFeed)
         
-        
         NSLayoutConstraint.activate([imageFeed.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20), imageFeed.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant:  -20), imageFeed.topAnchor.constraint(equalTo: view.topAnchor, constant: 250), imageFeed.heightAnchor.constraint(equalToConstant: 200)])
     }
     
